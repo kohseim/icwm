@@ -12,8 +12,8 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/">
-    <img src="https://img.shields.io/badge/arXiv-XXXXXX-b31b1b.svg" alt="arXiv">
+  <a href="https://arxiv.org/abs/2609.24352">
+    <img src="https://img.shields.io/badge/arXiv-2609.24352-b31b1b.svg" alt="arXiv">
   </a>
 </p>
 
@@ -51,7 +51,7 @@ bash scripts/intervention.sh
 @article{matsutani2026fewshot,
   title={Few-Shot Demonstrations Elicit the Use of In-Context World Representations in LLMs},
   author={Kohsei Matsutani, Gouki Minegishi, Core Francisco Park, Takeshi Kojima, Yusuke Iwasawa, Yutaka Matsuo},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2609.24352},
   year={2026}
 }
 ```
