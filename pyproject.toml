@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icwm"
+version = "0.1.0"
+description = "Few-shot graph inference, adjacency probing, and iterative subspace erasure with Qwen3 Base models"
+requires-python = ">=3.11"
+dependencies = ["numpy==1.26.4", "torch==2.5.1", "transformers==5.13.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

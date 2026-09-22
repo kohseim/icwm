@@ -1,0 +1,160 @@
+{
+  "models": {
+    "4b": {
+      "id": "Qwen/Qwen3-4B-Base",
+      "revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+      "layers": 36,
+      "hidden_size": 2560,
+      "probe_layers": [
+        4,
+        12,
+        20,
+        28,
+        36
+      ]
+    },
+    "8b": {
+      "id": "Qwen/Qwen3-8B-Base",
+      "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+      "layers": 36,
+      "hidden_size": 4096,
+      "probe_layers": [
+        4,
+        12,
+        20,
+        28,
+        36
+      ]
+    },
+    "14b": {
+      "id": "Qwen/Qwen3-14B-Base",
+      "revision": "0b0bd3732e2c374d483664439ea334928b65f304",
+      "layers": 40,
+      "hidden_size": 5120,
+      "probe_layers": [
+        4,
+        12,
+        20,
+        28,
+        36,
+        40
+      ]
+    }
+  },
+  "topologies": {
+    "lattice_4x4": {
+      "label": "4 × 4 Lattice Grid",
+      "rule_examples": 6,
+      "rank": 2,
+      "dataset_seed": 20260823,
+      "coordinates": "horizontal_vertical",
+      "offset": [
+        2,
+        0
+      ],
+      "rule_wrap": false
+    },
+    "lattice_5x5": {
+      "label": "5 × 5 Lattice Grid",
+      "rule_examples": 10,
+      "rank": 2,
+      "dataset_seed": 20260823,
+      "coordinates": "horizontal_vertical",
+      "offset": [
+        2,
+        0
+      ],
+      "rule_wrap": false
+    },
+    "lattice_3x5": {
+      "label": "3 × 5 Lattice Grid",
+      "rule_examples": 3,
+      "rank": 2,
+      "dataset_seed": 20260904,
+      "coordinates": "row_column",
+      "offset": [
+        0,
+        2
+      ],
+      "rule_wrap": false
+    },
+    "triangle_4x4": {
+      "label": "4 × 4 Triangle Grid",
+      "rule_examples": 6,
+      "rank": 2,
+      "dataset_seed": 20260904,
+      "coordinates": "row_column",
+      "offset": [
+        0,
+        2
+      ],
+      "rule_wrap": false
+    },
+    "torus_4x4": {
+      "label": "4 × 4 Torus Grid",
+      "rule_examples": 6,
+      "rank": 4,
+      "dataset_seed": 20260823,
+      "coordinates": "horizontal_vertical",
+      "offset": [
+        2,
+        0
+      ],
+      "rule_wrap": false
+    }
+  },
+  "shots": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "walk_length": [
+    48,
+    80
+  ],
+  "splits": {
+    "probe_train": 500,
+    "probe_validation": 100,
+    "final_test": 300
+  },
+  "dtype": "bfloat16",
+  "max_seq_len": 9000,
+  "probe": {
+    "seed": 20260823,
+    "epochs": 10,
+    "patience": 3,
+    "batch_size": 64,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001,
+    "bootstrap_samples": 1000
+  },
+  "intervention": {
+    "seed": 20260829,
+    "shots": [
+      0,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "rounds": 20,
+    "snapshots": [
+      4,
+      8,
+      10,
+      12,
+      16,
+      20
+    ],
+    "stop_auroc": 0.52,
+    "stop_patience": 2,
+    "batch_size": 16,
+    "bootstrap_samples": 5000,
+    "layers": "all"
+  }
+}
